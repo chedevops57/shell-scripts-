@@ -1,40 +1,40 @@
 #!/bin/bash
 echo hello world this is chenna
 # this is just a primary shell script
-#echo our shell is $BASH
-#echo our shell version is $BASH_VERSION
-#echo our home directory is $HOME
-#echo our working directory is $PWD
-#name= chenna
-#echo the name is $name
+echo our shell is $BASH
+echo our shell version is $BASH_VERSION
+echo our home directory is $HOME
+echo our working directory is $PWD
+name= chenna
+echo the name is $name
 
-#cal=calendar
-#echo $cal
+cal=calendar # intialing a variable
+echo $cal
 
 
 
 # taking input from the user
-#echo "enter the names you want"
-#read name1 name2 name3
-#echo " entered name are :$name1 ,$name2,$name3"
+echo "enter the names you want"
+read name1 name2 name3
+echo " entered name are :$name1 ,$name2,$name3"
 
 
 
 
 #   using the flags -p and -s (silent)
-#read -p 'username: ' user_var
-#read -sp 'password: ' pass_var
-#echo "username: $user_var"
-#echo "password : $pass_var"
+read -p 'username: ' user_var
+read -sp 'password: ' pass_var
+echo "username: $user_var"
+echo "password : $pass_var"
 
 
 
 
 
 # storing multiple inputs in an array    -a represents the array data structure here
-#echo "enter names: "
-#read -a names
-#echo "Names: ${names[0]}, ${names[1]}"
+echo "enter names: "
+read -a names
+echo "Names: ${names[0]}, ${names[1]}"
 # here the -a flag gives you the array data structure
 
 
@@ -55,10 +55,10 @@ echo $# #number of args
 
 # using if statement in script 
 
-#if[condition]
-#then 
-#    statement
-#fi
+if[condition]
+then 
+    statement
+fi
 
 count=10
 if [ $count -eq 10 ]
