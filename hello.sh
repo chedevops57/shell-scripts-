@@ -1,40 +1,40 @@
 #!/bin/bash
 echo hello world this is chenna
 # this is just a primary shell script
-echo our shell is $BASH
-echo our shell version is $BASH_VERSION
-echo our home directory is $HOME
-echo our working directory is $PWD
-name= chenna
-echo the name is $name
+#echo our shell is $BASH
+#echo our shell version is $BASH_VERSION
+#echo our home directory is $HOME
+#echo our working directory is $PWD
+#name= chenna
+#echo the name is $name
 
-cal=calendar # intialing a variable
-echo $cal
+#cal=calendar
+#echo $cal
 
 
 
 # taking input from the user
-echo "enter the names you want"
-read name1 name2 name3
-echo " entered name are :$name1 ,$name2,$name3"
+#echo "enter the names you want"
+#read name1 name2 name3
+#echo " entered name are :$name1 ,$name2,$name3"
 
 
 
 
 #   using the flags -p and -s (silent)
-read -p 'username: ' user_var
-read -sp 'password: ' pass_var
-echo "username: $user_var"
-echo "password : $pass_var"
+#read -p 'username: ' user_var
+#read -sp 'password: ' pass_var
+#echo "username: $user_var"
+#echo "password : $pass_var"
 
 
-
+#-------------------------------------------------------------------
 
 
 # storing multiple inputs in an array    -a represents the array data structure here
-echo "enter names: "
-read -a names
-echo "Names: ${names[0]}, ${names[1]}"
+#echo "enter names: "
+#read -a names
+#echo "Names: ${names[0]}, ${names[1]}"
 # here the -a flag gives you the array data structure
 
 
@@ -51,21 +51,21 @@ args=("$@")
 echo ${args[0]} ${args[1]} ${args[2]} ${args[3]}
 echo $@ #all args displayed
 echo $# #number of args
-
+#-------------------------------------------------------------------
 
 # using if statement in script 
 
-if[condition]
-then 
-    statement
-fi
+#if[condition]
+#then 
+#    statement
+#fi
 
 count=10
 if [ $count -eq 10 ]
 then
     echo " the condition is satisfied"
 fi
-
+#-----------------------------------------------------
 
 # if else statements
 
@@ -82,7 +82,7 @@ else
 
 fi
 
-
+#----------------------------------------------------------------------------
 
 # file test operations
 # for file search use flag -f
@@ -146,7 +146,7 @@ else
     echo "$file_name does not exists"
 fi
 
-
+#------------------------------------------------------------------------
 
 # and operator with if conditional statement
 
@@ -178,7 +178,7 @@ then
 else
     echo "you are not eligible for the trip"
 fi
-
+#-----------------------------------------------------------------
 
 # or operator
 echo -e "Enter the age please :\c "
@@ -211,7 +211,7 @@ then
 else
     echo "you are  eligible for the trip"
 fi
-
+#-----------------------------------------------------------------
 # arthematic operations
 
 #! /bin/bash
@@ -224,7 +224,7 @@ echo $(( num1 - num2 )) is the difference
 echo $(( num1 / num2 )) is the division
 echo $(( num1 * num2 )) is the multiplication
 echo $(( num1 % num2 )) is the absolute
-
+#-----------------------------------------------------------------
 
 # arthematic operations
 
@@ -269,7 +269,7 @@ echo
 echo the $num1 th power of $num2 is
 echo "scale=3;$num2^$num1" | bc -l
 
-
+#------------------------------------------------------------------------------
 # case statements 
 
 #! /bin/bash
@@ -318,7 +318,7 @@ case $value in
         * )
                 echo " user entered $value which is unknown to me"
 esac
-
+#----------------------------------------------------------------------------------
 
 # USING ARRAY VARIABLES
 
@@ -341,7 +341,7 @@ echo "now i am going to delete a element at 2nd position"
 unset os[1] # removes the 2nd element in the array
 echo "${os[@]}"
 
-
+#--------------------------------------------------------------------------
 
 # USING WHILE LOOP
 
@@ -384,6 +384,302 @@ do
         echo $line
 done < /etc/host.conf
 
+#-------------------------------------------------------------------------------
+
+# USING INTILL LOOPS
+# IN THE UNTILL LOOP THE COMMANDS ARE EXECUTED UNTILL THE CONDITION IS FALSE
+#! /bin/bash
+#syntax
+until [ condition ]
+do
+    command
+    command
+    command
+done
 
 
 
+# USING UNTIL LOOps
+#! /bin/bash
+#syntax
+n=1
+until [ $n -gt 20 ]
+do
+    echo $n
+    echo " shell scrpting is not that tough its pretty easy actually"
+    n=$((n+1))
+
+done
+#-----------------------------------------------------------
+
+# using for loops
+#! /bin/bash
+#syntax
+
+for VARIABLE in 1 2 3 4 5 .. n
+do 
+    command
+    command
+    command
+    command
+    command
+done
+
+#OR----------------------------------------------------------
+
+for VARIABLE in file1 file2 file3
+do 
+    command1
+    command2
+    command3
+done
+
+#or-------------------------------------------------------------
+
+for OUTPUT in $(Linux-Or-Command-Here)
+do  
+    command on $OUTPUT
+    command on $OUTPUT 
+    command on $OUTPUT 
+done
+
+#or--------------------------------
+for (( EXP1; EXP2; EXP3 ))
+do 
+    command1
+    command2
+    command3
+    command4
+done
+
+#----------------------------
+# using for loops
+#! /bin/bash
+#syntax
+echo $BASH_VERSION
+for (( i=0; i<10; i++ ))
+do
+   echo $i
+  echo " bash scripting will help you alot in future"
+done
+
+#-------------------------------------
+# using for loops
+#! /bin/bash
+#syntax
+
+for i in {1..20..3}
+do
+    echo $i
+   echo " shell scripting is easy "
+    echo ${BASH_VERSION}
+done
+#--------------------------------
+# using for loops to execute commands
+#! /bin/bash
+#syntax
+
+for command in ls pwd date
+do
+    echo "--------------------------$command------------------------"
+   $command
+done
+#-------------------------------------------
+# using for loops to display all directories present
+#! /bin/bash
+#syntax
+
+for item in *
+do
+    if [ -d $item ]
+    then
+        echo $item
+    fi 
+done
+
+#----------------------
+# using for loops to display all files present
+#! /bin/bash
+#syntax
+
+for item in *
+do
+    if [ -f $item ]
+    then
+        echo $item
+    fi 
+done
+#--------------------------------
+
+# using select loop 
+#! /bin/bash
+#syntax
+
+select varName in list 
+do 
+    command
+    command
+    command
+    command
+done
+
+#---------------------
+# using select loop 
+#! /bin/bash
+#syntax
+
+select Name in chenna kesava ram yash 
+do 
+    echo "$Name selected"
+done
+#-----------------------------------
+# using select loop with case statement
+#! /bin/bash
+#syntax
+
+select Name in chenna kesava ram yash 
+do 
+    case $name in 
+    chenna)
+        echo "chenna is specialist in coding"
+        ;;
+    kesava)
+        echo "kesava is specialist in packaging"
+        ;;
+    ram)
+        echo " ram is specialist in damage control"
+        ;;
+    yash)
+        echo " yash is specialist in managing"
+        ;;
+    *)
+    echo "error please enter a value from above"
+    esac
+done
+
+
+
+#---------------------------------------------------
+# USING THE BREAK STATEMENT TO BREAK IN THE MIDDLE OF A LOOP
+#!/bin/bash
+
+for ((i=1 ; i<=10 ; i++))
+do
+        if [ $i -eq 5 ]
+        then
+                break
+        fi
+  echo $i ;
+done
+
+#--------------------------------------------------
+# using continue statement
+for ((i=1 ; i<=10 ; i++))
+do
+        if [ $i -eq 3 -o $i -eq 6 ]
+        then
+                continue
+        fi
+  echo $i ;
+done
+
+
+#-------------------------------------------------
+# FUNCTIONS
+
+#!/bin/bash
+
+function name() {
+    commands
+}
+
+name() {
+    commands
+}
+
+#------------
+# hello world function
+#!/bin/bash
+
+function Hello() {
+    echo "hello World"
+}
+quit (){
+    exit
+}
+
+Hello
+quit
+echo "food is awesome"
+
+
+#-------------------------------
+# passing arguments in functions
+
+#! /bin/bash
+function print() {
+    echo $1 $2 $3
+}
+quit (){
+    exit
+}
+
+print hello chenna hai
+print world
+print again # here we called the print funtion 3 times
+quit
+echo "food is awesome"
+
+
+#------------------------------
+# global variable vs local variabe in functions
+
+#!/bin/bash
+function print(){
+    name=$1
+    echo " my name is $name"
+}
+
+name= "tom"
+echo " my name is $name : before"
+print chenna
+echo " my name is $name : after"
+
+echo " now you know hoe the local variables work"
+
+
+# global variable vs local variabe in functions
+
+#!/bin/bash
+function print(){
+    local name=$1 # we are localising the variable by local key word
+    echo " my name is $name"
+}
+
+name= "tom"
+echo " my name is $name : before"
+print chenna
+echo " my name is $name : after"
+
+echo " now you know hoe the local variables work"
+
+
+# FUNCTION EXAMPLE
+# CHECKING WHETHER A FILE EXIST OR NOT USING FUNCTIONS
+
+#!/bin/bash
+usuage(){
+    echo "YOU NEED To PROVIDE AN ARGUMENT : "
+    echo "usuage : $0 file_name"
+}
+is_file_exists() {
+    local file="$1"
+    [[ -f "$file" ]] && return 0 || return 1
+}
+[[ $# -eq 0 ]] && usuage
+if ( is_file_exists "$1")
+then
+    echo "file found"
+else
+    echo " fle not found"
+fi
