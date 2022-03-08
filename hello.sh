@@ -683,3 +683,42 @@ then
 else
     echo " fle not found"
 fi
+
+
+
+
+#------------------------------------------------------
+
+#read only variable / function
+
+#!/bin/bash
+var=31
+readonly var
+var=50
+echo "var => $var"
+
+
+
+hello(){
+    echo "hello world"
+}
+
+readonly -f hello
+
+hello(){
+    echo "hello world again"
+}
+
+#----------------------------------------------------------
+# signals and traps
+#!/bin/bash
+trap "echo exit signal is detected  " SIGINT
+echo "pid is $$"
+while (( count < 10 )) # for more man 7 signal
+do              # you cannnot trap SIGKILL and SIGSTOP
+    sleep 10
+    (( count ++ ))
+    echo $count
+done
+exit 0
+
